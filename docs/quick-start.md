@@ -16,11 +16,11 @@ Now navigate in your terminal to the project folder and run the following comman
  2. `flutter upgrade`
  3. `flutter pub get`
 
-Open the project in VsCode, Android Studio or any other IDE. And connect a device or start a emulator. 
+Open the project in VsCode, Android Studio or any other IDE. And connect a device or start an emulator. 
 
 Once the device is connected or the emulator started. Run the app by pressing the run button or running `flutter run` in the embedded terminal.  
 
-After this the app should start up successfully and display the demo content.  
+After this, the app should start up successfully and display the demo content.  
 
   
 
