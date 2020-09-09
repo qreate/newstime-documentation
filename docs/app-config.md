@@ -21,7 +21,7 @@ Were the variable `appName` would be your app name.
 
 ### Change the basic image logo
 
-By default the image logo is loaded from a remote url and can be easily changed by changing the following section in the app config.
+By default, the image logo is loaded from a remote URL and can be easily changed by changing the following section in the app config.
 
 ```dart 
   static String imageUrl = 'YOUR IMAGE URL'; // Please make sure the url is https
@@ -79,7 +79,7 @@ And then run ``` flutter pub run flutter_launcher_icons:main```.
 
 ## Android app and package name
 ### App name
-You can change app name by opening `android/app/src/main/AndroidManifest.xml` and changing `android:label="NewsTime"` in the application tag to a name of your choice.
+You can change the app name by opening `android/app/src/main/AndroidManifest.xml` and changing `android:label="NewsTime"` in the application tag to a name of your choice.
 
 ### Package name
 You can change the package name by opening `android/app/build.gradle` and changing the value of `applicationId` in `defaultConfig` to a value of your choice. You will also need to change the `package="com.qreate.newstime"` tag in `android/app/src/main/AndroidManifest.xml` .
@@ -87,7 +87,7 @@ You can change the package name by opening `android/app/build.gradle` and changi
 ### App name
 You can change app name by opening `ios/Runner/Info.plist` and changing ```<key>CFBundleName</key>
 <string>NewsTime</string>``` to ```<key>CFBundleName</key>
-	<string>Your app name</string>```.
+  <string>Your app name</string>```.
 ### Bundle id
 
 You can change the bundle id by opening `ios/Runner.xcworkspace` with Xcode and change the `Bundle Identifier` on the Runner.

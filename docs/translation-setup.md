@@ -18,13 +18,13 @@ The flutter localization settings are easy to change in the following file `lib/
   ];
 ```
 
-Afterwards add your translation file to `assets/translations` , please check the `en.json` file for the structure and keys.
+Afterwards, add your translation file to `assets/translations`, please check the `en.json` file for the structure and keys.
 
 To enable languages for iOS open `ios/Runner/Info.plist` and add your language keys to the following array.
 
 ``` xml
 <key>CFBundleLocalizations</key>
 <array>
-	<string>en</string>
+  <string>en</string>
 </array>
 ```
