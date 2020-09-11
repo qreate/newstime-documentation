@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Create build
         run: |
-          cd /home/runner/work/newstime-documentation/newstime-documentation/website
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
