@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Create build
         run: |
+          cd website
           if [ -e yarn.lock ]; then
           yarn install --frozen-lockfile
           elif [ -e package-lock.json ]; then
