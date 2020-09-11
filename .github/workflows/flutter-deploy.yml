@@ -1,0 +1,30 @@
+#The name of your workflow.
+name: Test, build and deploy
+# Trigger the workflow on push or pull request
+on: [push]
+# on:
+#   push:
+#     branches: [release]
+#A workflow run is made up of one or more jobs. Jobs run in parallel by default.
+jobs:
+  deploy:
+    name: Deploy
+    needs: test_deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create build
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
+          npm run build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:documentation-newstime
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
