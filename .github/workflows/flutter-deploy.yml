@@ -9,7 +9,6 @@ on: [push]
 jobs:
   deploy:
     name: Deploy
-    needs: test_deploy
     runs-on: ubuntu-latest
     steps:
       - name: Create build
