@@ -1,0 +1,32 @@
+#The name of your workflow.
+name: Test, build and deploy
+# Trigger the workflow on push or pull request
+# on: [push]
+on:
+  push:
+    branches: [release]
+#A workflow run is made up of one or more jobs. Jobs run in parallel by default.
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn install` command
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build # will run `yarn build` command
+      - name: Apply target
+        uses: w9jds/firebase-action@master
+        with:
+          args: target:apply hosting documentation documentation-newstime
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting:documentation
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
