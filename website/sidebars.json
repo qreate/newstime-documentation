@@ -1,8 +1,0 @@
-{
-    "docs": {
-        "General Information": ["project-structure"],
-        "Mobile": ["quick-start", "app-config", "localization-setup", "project-structure"],
-        "Api": ["api-setup"],
-        "Firebase": ["firebase-setup"]
-    }
-}
